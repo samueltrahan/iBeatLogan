@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import './NavBar.css'
 
 export default function NavBar() {
@@ -6,7 +7,7 @@ export default function NavBar() {
     <>
       <nav className="nav-bar">
         <div>
-          <a href="/"><img alt="" src="/images/ibeatlogan.png"></img></a>
+          <Link to="/"><img alt="" src="/images/ibeatlogan.png"></img></Link>
         </div>
       </nav>
     </>
