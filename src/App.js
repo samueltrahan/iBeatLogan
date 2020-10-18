@@ -15,7 +15,7 @@ export default function App() {
   return (
     <Router>
       <NavBar />
-      <Route exact path="/addgame" render={() => <AddGame handleSetPlayers={handleSetPlayers}/>}></Route>
+      <Route exact path="/addgame" render={() => <AddGame handleSetPlayers={handleSetPlayers} players={players}/>}></Route>
     </Router>
   );
 }
