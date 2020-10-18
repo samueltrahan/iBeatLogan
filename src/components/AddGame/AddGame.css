@@ -1,0 +1,14 @@
+.heading {
+  text-align: center;
+}
+
+.dropdown-head {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+.dropdown {
+  width: 350px;
+  margin-top: 30px;
+}
