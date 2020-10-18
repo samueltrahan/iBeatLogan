@@ -2,8 +2,19 @@
   background-color: black;
   height: 115px;
   text-align: center;
+  display: flex;
 }
 
 img {
   width: 150px;
+}
+
+.nav-logo {
+ display: block;
+}
+
+.nav-elements {
+  display: flex;
+  justify-content: center;
+  align-self: center;
 }
