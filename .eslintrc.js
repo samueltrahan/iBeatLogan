@@ -33,6 +33,7 @@ module.exports = {
     'import/prefer-default-export': [0, false],
     'prettier/prettier': 'error',
     'react/jsx-filename-extension': [0, false],
+    'react/prop-types': [0, false],
     'react-hooks/exhaustive-deps': 'warn',
   },
   settings: {
