@@ -8,7 +8,7 @@ export default function NavBar() {
         <div className="nav-logo">
           <li>
             <a href="/">
-              <img alt="" src="/images/ibeatlogan.png"></img>
+              <img alt="" src="/images/ibeatlogan.png" />
             </a>
           </li>
         </div>
