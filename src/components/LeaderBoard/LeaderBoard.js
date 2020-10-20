@@ -8,7 +8,7 @@ export default function LeaderBoard({ horse, oneOnOne, twentyOne }) {
       <h1 className="twenty-one">21</h1>
       {twentyOne.map(twenty => (
         <li className="name-wins">
-          {twenty.name} - {twenty.wins}
+          {twenty.name}-{twenty.wins}
         </li>
       ))}
       <h1 className="one-v-one">1 v. 1</h1>

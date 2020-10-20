@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import axios from 'axios';
 import AddGame from './components/AddGame/AddGame';
 import NavBar from './components/NavBar/NavBar';
 import './App.css';
-import axios from 'axios';
 import LeaderBoard from './components/LeaderBoard/LeaderBoard';
 
 export default function App() {
