@@ -6,6 +6,8 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.20.0",
+    "json-server": "^0.16.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
@@ -17,7 +19,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "./node_modules/.bin/eslint . --ext .js,.jsx",
-    "prettier": "./node_modules/.bin/prettier -c 'src/**/*.{js,jsx,json,css,md}'"
+    "prettier": "./node_modules/.bin/prettier -c 'src/**/*.{js,jsx,json,css,md}'",
+    "dev-server": "./node_modules/.bin/json-server --watch db.json --port 3001"
   },
   "browserslist": {
     "production": [
@@ -50,5 +53,6 @@
   },
   "resolutions": {
     "eslint-config-airbnb/eslint": "7.11.0"
-  }
+  },
+  "proxy": "http://localhost:3001"
 }
