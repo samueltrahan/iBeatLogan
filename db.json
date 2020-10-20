@@ -1,0 +1,19 @@
+{
+  "leaderboard": {
+    "horse": [
+      { "name": "jp", "wins": 5 },
+      { "name": "sam", "wins": 4 },
+      { "name": "logan", "wins": 3 },
+      { "name": "tmou", "wins": 7 }
+    ],
+    "oneOnOne": [
+      { "name": "jp", "wins": 2 },
+      { "name": "sam", "wins": 1 },
+      { "name": "logan", "wins": 5 }
+    ],
+    "twentyOne": [
+      { "name": "jp", "wins": 1 },
+      { "name": "sam", "wins": 3 }
+    ]
+  }
+}
