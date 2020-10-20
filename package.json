@@ -30,7 +30,6 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^7.11.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.13.0",
     "eslint-plugin-import": "^2.22.1",
@@ -46,5 +45,8 @@
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
+  },
+  "resolutions": {
+    "eslint-config-airbnb/eslint": "7.11.0"
   }
 }
