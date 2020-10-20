@@ -15,7 +15,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "./node_modules/.bin/eslint . --ext .js,.jsx",
+    "prettier": "./node_modules/.bin/prettier -c 'src/**/*.{js,jsx,json,css,md}'"
   },
   "browserslist": {
     "production": [
