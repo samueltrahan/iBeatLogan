@@ -30,12 +30,13 @@ module.exports = {
         jsx: 'never',
       },
     ],
+    'import/no-extraneous-dependencies': [0, false],
     'import/prefer-default-export': [0, false],
     'prettier/prettier': 'error',
     'react/jsx-filename-extension': [0, false],
+    'react/jsx-one-expression-per-line': [0, false],
     'react/prop-types': [0, false],
     'react-hooks/exhaustive-deps': 'warn',
-    'react/jsx-one-expression-per-line': [0, false],
   },
   settings: {
     'import/resolver': {

@@ -7,6 +7,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.20.0",
+    "faunadb": "^3.0.1",
     "json-server": "^0.16.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -18,7 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "./node_modules/.bin/eslint . --ext .js,.jsx",
+    "lint": "./node_modules/.bin/eslint src --ext .js,.jsx",
     "prettier": "./node_modules/.bin/prettier -c 'src/**/*.{js,jsx,json,css,md}'",
     "dev-server": "./node_modules/.bin/json-server --watch db.json --port 3001"
   },
@@ -35,6 +36,7 @@
     ]
   },
   "devDependencies": {
+    "dotenv": "^8.2.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.13.0",
     "eslint-plugin-import": "^2.22.1",
