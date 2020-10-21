@@ -28,7 +28,7 @@ exports.handler = async event => {
     const { wins } = winsData;
 
     // calculates the new number of wins
-    const updatedWins = wins + (amount || 1);
+    const updatedWins = wins + (Number(amount) || 1);
 
     // updates the user's document in the proper gameType collection
     const { data: updatedData } = await faunaClient.query(
