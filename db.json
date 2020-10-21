@@ -1,5 +1,5 @@
 {
-  "leaderboard": {
+  "leaderboards": {
     "horse": [
       { "name": "jp", "wins": 5 },
       { "name": "sam", "wins": 4 },
