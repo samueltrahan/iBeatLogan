@@ -1,0 +1,10 @@
+.input-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.winner {
+  width: 220px;
+  margin-top: 30px;
+}
