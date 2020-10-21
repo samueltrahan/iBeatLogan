@@ -26,8 +26,18 @@ export default function App() {
       <Router>
         <NavBar />
         <Route exact path="/addgame" render={() => <AddGame />} />
+        <Route
+          exact
+          path="/"
+          render={() => (
+            <LeaderBoard
+              horse={horse}
+              oneOnOne={oneOnOne}
+              twentyOne={twentyOne}
+            />
+          )}
+        />
       </Router>
-      <LeaderBoard horse={horse} oneOnOne={oneOnOne} twentyOne={twentyOne} />
     </>
   );
 }
