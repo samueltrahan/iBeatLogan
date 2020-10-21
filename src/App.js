@@ -13,7 +13,7 @@ export default function App() {
 
   useEffect(() => {
     const handleLeaderBoard = async () => {
-      const response = await axios.get('/leaderBoard');
+      const response = await axios.get('/api/leaderboards');
       setHorse(response.data.horse.sort((a, b) => b.wins - a.wins));
       setOneOnOne(response.data.oneOnOne.sort((a, b) => b.wins - a.wins));
       setTwentyOne(response.data.twentyOne.sort((a, b) => b.wins - a.wins));
