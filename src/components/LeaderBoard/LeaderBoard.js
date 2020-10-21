@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './LeaderBoard.css';
 
-export default function LeaderBoard({ horse, oneOnOne, twentyOne }) {
+export default function LeaderBoard() {
+  const [horse, setHorse] = useState([]);
+  const [oneOnOne, setOneOnOne] = useState([]);
+  const [twentyOne, setTwentyOne] = useState([]);
+
+  useEffect(() => {
+    const handleLeaderBoard = async () => {
+      const response = await axios.get('/api/leaderboards');
+      setHorse(response.data.horse.sort((a, b) => b.wins - a.wins));
+      setOneOnOne(response.data.oneOnOne.sort((a, b) => b.wins - a.wins));
+      setTwentyOne(response.data.twentyOne.sort((a, b) => b.wins - a.wins));
+    };
+    handleLeaderBoard();
+  }, []);
   return (
     <>
       <h1 className="leader-board">Leader Board</h1>
