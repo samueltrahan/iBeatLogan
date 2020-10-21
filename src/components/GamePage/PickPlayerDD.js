@@ -11,8 +11,8 @@ export default function PickPlayerDD() {
           <option value="2">JP Angelle</option>
           <option value="3">Logan Sonnier</option>
           <option value="4">Cody Huval</option>
-          <option value="5">Terrance Mouton</option>
-          <option value="6">Alex Abushnab</option>
+          <option value="5">Terrence Mouton</option>
+          <option value="6">Alex Abushanab</option>
         </select>
       </div>
     </>
