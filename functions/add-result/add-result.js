@@ -44,7 +44,7 @@ exports.handler = async event => {
 
     return {
       statusCode: 200,
-      body: JSON.stringify(updatedData),
+      body: JSON.stringify({ ...updatedData, gameType }),
     };
   } catch (err) {
     return {
