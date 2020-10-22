@@ -18,13 +18,13 @@ export default function AddGame() {
 
   const handleFormSubmit = async event => {
     event.preventDefault();
-    const response = await axios.post('/api/add-result', {
+    const { data } = await axios.post('/api/add-result', {
       name: player,
       gameType: game,
       amount: wins,
     });
     await axios.post('/api/send-text', {
-      response: response.data,
+      ...data,
     });
     history.push('/');
   };
