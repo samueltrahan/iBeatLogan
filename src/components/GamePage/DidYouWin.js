@@ -1,7 +1,7 @@
 import React from 'react';
 import './DidYouWin.css';
 
-export default function DidYouWin({ setWins }) {
+export default function DidYouWin({ setWins, wins }) {
   return (
     <div className="input-box">
       <div className=" ui input">
@@ -10,6 +10,7 @@ export default function DidYouWin({ setWins }) {
           className="winner"
           type="text"
           placeholder="How many games did you win?"
+          value={wins}
         />
       </div>
     </div>
