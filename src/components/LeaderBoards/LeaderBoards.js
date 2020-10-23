@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { Leaderboard } from './Leaderboard';
 import './LeaderBoards.css';
@@ -7,6 +8,8 @@ import './LeaderBoards.css';
 const sortWins = game => game.sort((a, b) => b.wins - a.wins);
 
 export default function LeaderBoard() {
+  const history = useHistory();
+
   const [horse, setHorse] = useState([]);
   const [oneOnOne, setOneOnOne] = useState([]);
   const [twentyOne, setTwentyOne] = useState([]);
@@ -25,7 +28,11 @@ export default function LeaderBoard() {
   }, [data]);
 
   if (isLoading) {
-    return <>Loading Spinner</>;
+    return (
+      <div className="ui active inverted dimmer">
+        <div className="ui text loader">Loading</div>
+      </div>
+    );
   }
 
   if (error) {
@@ -34,6 +41,17 @@ export default function LeaderBoard() {
 
   return (
     <>
+      <div className="add-game-button">
+        <button
+          type="button"
+          className="primary ui button"
+          onClick={() => {
+            history.push('/add-game');
+          }}
+        >
+          Add Game
+        </button>
+      </div>
       <h1 className="leader-board">Leader Board</h1>
       <h1 className="twenty-one">21</h1>
       <Leaderboard players={twentyOne} />

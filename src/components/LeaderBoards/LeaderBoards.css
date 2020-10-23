@@ -1,26 +1,28 @@
 .leader-board {
   text-align: center;
-  font-size: 70px;
+  font-size: 40px;
+  margin-top: 0;
 }
 
 .twenty-one {
   text-align: center;
-  text-decoration: underline;
-  padding: 30px;
 }
 
 .one-v-one {
   text-align: center;
-  text-decoration: underline;
-  padding: 30px;
 }
 
 .horse {
   text-align: center;
-  text-decoration: underline;
-  padding: 30px;
 }
 
 .name-wins {
   text-align: center;
+}
+
+.add-game-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
 }

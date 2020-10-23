@@ -1,21 +1,30 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
+
 import './NavBar.css';
 
 export default function NavBar() {
+  const history = useHistory();
+
   return (
     <>
       <nav className="nav-bar">
         <div className="nav-logo">
-          <li>
-            <a href="/">
-              <img alt="" src="/images/ibeatlogan.png" />
-            </a>
-          </li>
-        </div>
-        <div className="nav-elements">
-          <li>
-            <a href="/addgame">Add a Game</a>
-          </li>
+          <div
+            onKeyPress={event => {
+              if (event.key === 'Enter') {
+                history.push('/');
+              }
+            }}
+            onClick={() => {
+              history.push('/');
+            }}
+            role="button"
+            tabIndex="0"
+          >
+            <img alt="" src="/images/ibeatlogan.png" />
+            <span>iBeatLogan</span>
+          </div>
         </div>
       </nav>
     </>
