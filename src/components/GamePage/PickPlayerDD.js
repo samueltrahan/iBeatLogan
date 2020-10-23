@@ -1,4 +1,3 @@
-import React from 'react';
 import './PickPlayerDD.css';
 
 export default function PickPlayerDD({ setPlayer }) {

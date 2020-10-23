@@ -1,4 +1,3 @@
-import React from 'react';
 import './GamesDropDown.css';
 
 export default function GamesDropDown({ setGame }) {

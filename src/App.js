@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { ReactQueryDevtools } from 'react-query-devtools';
 import AddGame from './components/AddGame/AddGame';

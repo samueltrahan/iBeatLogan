@@ -1,4 +1,3 @@
-import React from 'react';
 import { NAMES_DISPLAY_NAME } from '../../constants';
 
 export const Leaderboard = ({ players }) => (
