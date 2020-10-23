@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { useMutation } from 'react-query';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import GamesDropDown from '../GamePage/GamesDropDown';
 import DidYouWin from '../GamePage/DidYouWin';
 import PickPlayerDD from '../GamePage/PickPlayerDD';
-
 import './AddGame.css';
 
 const isANumber = value => !Number.isNaN(Number(value));
@@ -16,18 +16,27 @@ export default function AddGame() {
   const [wins, setWins] = useState('');
   const [disabled, setDisabled] = useState(true);
 
+  const [addResult] = useMutation(
+    async () => {
+      const response = await axios.post('/api/add-result', {
+        name: player,
+        gameType: game,
+        amount: wins,
+      });
+      await axios.post('/api/send-text', {
+        response: response.data,
+      });
+    },
+    {
+      onSuccess: () => {
+        history.push('/');
+      },
+    },
+  );
+
   const handleFormSubmit = async event => {
     event.preventDefault();
-    const { data } = await axios.post('/api/add-result', {
-      name: player,
-      gameType: game,
-      amount: wins,
-    });
-    await axios.post('/api/send-text', {
-      ...data,
-      newWins: wins,
-    });
-    history.push('/');
+    addResult();
   };
 
   useEffect(() => {

@@ -1,9 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { ReactQueryDevtools } from 'react-query-devtools';
 import AddGame from './components/AddGame/AddGame';
+import LeaderBoards from './components/LeaderBoards/LeaderBoards';
 import NavBar from './components/NavBar/NavBar';
 import './App.css';
-import LeaderBoard from './components/LeaderBoard/LeaderBoard';
 
 export default function App() {
   return (
@@ -11,8 +12,9 @@ export default function App() {
       <Router>
         <NavBar />
         <Route exact path="/addgame" render={() => <AddGame />} />
-        <Route exact path="/" render={() => <LeaderBoard />} />
+        <Route exact path="/" render={() => <LeaderBoards />} />
       </Router>
+      <ReactQueryDevtools initialIsOpen={false} />
     </>
   );
 }
