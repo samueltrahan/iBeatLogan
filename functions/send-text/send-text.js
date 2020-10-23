@@ -1,21 +1,20 @@
 const TwilioSdk = require('twilio');
-const { GAME_TYPE_DISPLAY_NAME } = require('./constants');
-// Your Account SID from www.twilio.com/console
+const { GAME_TYPE_DISPLAY_NAME, NAMES_DISPLAY_NAME } = require('./constants');
+
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
-// Your Auth Token from www.twilio.com/console
 const authToken = process.env.TWILIO_AUTH_TOKEN;
-// instantiate twilio SDK
+const twilioPhoneNumber = process.env.TWILIO_PHONE_NUMBER;
+
 const twilio = new TwilioSdk(accountSid, authToken);
 
-// use twilio SDK to send text message https://www.twilio.com/docs/libraries/node
 exports.handler = async (event, context, callback) => {
   const { gameType, name } = JSON.parse(event.body);
 
   const sms = {
     // to: process.env.LOGANS_PHONE_NUMBER,
-    to: +13379099418,
-    body: `${name} beat you in ${GAME_TYPE_DISPLAY_NAME[gameType]}!`,
-    from: process.env.TWILIO_PHONE_NUMBER,
+    to: +13372771134,
+    body: `${NAMES_DISPLAY_NAME[name]} beat you in ${GAME_TYPE_DISPLAY_NAME[gameType]}!`,
+    from: twilioPhoneNumber,
   };
 
   try {

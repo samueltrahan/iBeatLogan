@@ -25,6 +25,7 @@ export default function AddGame() {
     });
     await axios.post('/api/send-text', {
       ...data,
+      newWins: wins,
     });
     history.push('/');
   };
