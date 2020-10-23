@@ -1,10 +1,10 @@
-const PLAYERS = [
-  'Sam Trahan',
-  'JP Angelle',
-  'Logan Sonnier',
-  'Terrance Mouton',
-  'Cody Huval',
-  'Alex Abushnab',
-];
+const NAMES_DISPLAY_NAME = {
+  alex: 'Boosh',
+  cody: 'Cojack',
+  jp: 'JP',
+  logan: 'Logan',
+  sam: 'SammyT',
+  terrence: 'Tmou',
+};
 
-export { PLAYERS };
+export { NAMES_DISPLAY_NAME };

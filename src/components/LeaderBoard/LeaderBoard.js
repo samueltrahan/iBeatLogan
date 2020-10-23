@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { NAMES_DISPLAY_NAME } from '../../constants';
 import './LeaderBoard.css';
 
 export default function LeaderBoard() {
@@ -22,19 +23,19 @@ export default function LeaderBoard() {
       <h1 className="twenty-one">21</h1>
       {twentyOne.map(twenty => (
         <li className="name-wins">
-          {twenty.name}-{twenty.wins}
+          {NAMES_DISPLAY_NAME[twenty.name]} - {twenty.wins}
         </li>
       ))}
       <h1 className="one-v-one">1 v. 1</h1>
       {oneOnOne.map(onevone => (
         <li className="name-wins">
-          {onevone.name} - {onevone.wins}
+          {NAMES_DISPLAY_NAME[onevone.name]} - {onevone.wins}
         </li>
       ))}
       <h1 className="horse">HORSE</h1>
       {horse.map(h => (
         <li className="name-wins">
-          {h.name} - {h.wins}
+          {NAMES_DISPLAY_NAME[h.name]} - {h.wins}
         </li>
       ))}
     </>
