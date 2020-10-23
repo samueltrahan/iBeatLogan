@@ -16,15 +16,15 @@ export default function AddGame() {
   const [wins, setWins] = useState('');
   const [disabled, setDisabled] = useState(true);
 
-  const [addResult] = useMutation(
+  const [addResult, { isLoading }] = useMutation(
     async () => {
-      const response = await axios.post('/api/add-result', {
+      const { data } = await axios.post('/api/add-result', {
         name: player,
         gameType: game,
         amount: wins,
       });
       await axios.post('/api/send-text', {
-        response: response.data,
+        ...data,
       });
     },
     {
@@ -47,21 +47,31 @@ export default function AddGame() {
     }
   }, [game, player, wins]);
 
+  if (isLoading) {
+    return (
+      <div className="ui active inverted dimmer">
+        <div className="ui text loader">Loading</div>
+      </div>
+    );
+  }
+
   return (
     <>
       <h1 className="heading">Add a Game</h1>
-      <form>
+      <form className="add-game-form">
         <PickPlayerDD setPlayer={setPlayer} />
         <GamesDropDown setGame={setGame} />
         <DidYouWin setWins={setWins} wins={wins} />
-        <button
-          disabled={disabled}
-          className="negative ui button"
-          type="submit"
-          onClick={handleFormSubmit}
-        >
-          Submit
-        </button>
+        <div className="submit-button">
+          <button
+            disabled={disabled}
+            className="primary ui button"
+            type="submit"
+            onClick={handleFormSubmit}
+          >
+            Submit
+          </button>
+        </div>
       </form>
     </>
   );

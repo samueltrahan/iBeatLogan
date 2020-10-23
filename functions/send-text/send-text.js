@@ -19,7 +19,6 @@ exports.handler = async (event, context, callback) => {
 
   try {
     const message = await twilio.messages.create(sms);
-
     return callback(null, {
       statusCode: 200,
       body: JSON.stringify({

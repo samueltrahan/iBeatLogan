@@ -11,7 +11,7 @@ export default function App() {
     <>
       <Router>
         <NavBar />
-        <Route exact path="/addgame" render={() => <AddGame />} />
+        <Route exact path="/add-game" render={() => <AddGame />} />
         <Route exact path="/" render={() => <LeaderBoards />} />
       </Router>
       <ReactQueryDevtools initialIsOpen={false} />
