@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { Leaderboard } from './Leaderboard';
 import './LeaderBoards.css';
+import { LeaderBoardRadios } from './LeaderBoardRadios';
 
 const sortWins = game => game.sort((a, b) => b.wins - a.wins);
 
@@ -13,6 +14,7 @@ export default function LeaderBoard() {
   const [horse, setHorse] = useState([]);
   const [oneOnOne, setOneOnOne] = useState([]);
   const [twentyOne, setTwentyOne] = useState([]);
+  const [currentLeaderboard, setCurrentLeaderboard] = useState('twentyOne');
 
   const { data, error, isLoading } = useQuery('leaderboard', async () => {
     const response = await axios.get('/api/leaderboards');
@@ -39,28 +41,44 @@ export default function LeaderBoard() {
     return <>Error! {error.message}</>;
   }
 
+  const computerLeaderboard = () => {
+    if (currentLeaderboard === 'twentyOne') {
+      return twentyOne;
+    }
+
+    if (currentLeaderboard === 'oneOnOne') {
+      return oneOnOne;
+    }
+
+    return horse;
+  };
+
   return (
     <>
-      <div className="add-game-button">
-        <button
-          type="button"
-          className="primary ui button"
-          onClick={() => {
-            history.push('/add-game');
-          }}
-        >
-          Add Game
-        </button>
+      <h1 className="leaderboards-header">Leaderboards</h1>
+      <div className="button-controls">
+        <div className="add-game-button">
+          <button
+            type="button"
+            className="secondary ui button"
+            onClick={() => {
+              history.push('/add-game');
+            }}
+          >
+            Add Result
+          </button>
+        </div>
+        <LeaderBoardRadios
+          currentLeaderboard={currentLeaderboard}
+          setCurrentLeaderboard={setCurrentLeaderboard}
+        />
       </div>
-      <h1 className="leader-board">Leader Board</h1>
-      <h1 className="twenty-one">21</h1>
-      <Leaderboard players={twentyOne} />
 
-      <h1 className="one-v-one">1 v. 1</h1>
-      <Leaderboard players={oneOnOne} />
-
-      <h1 className="horse">HORSE</h1>
-      <Leaderboard players={horse} />
+      <div className="leaderboard-header">
+        <span>Player</span>
+        <span>Wins</span>
+      </div>
+      <Leaderboard players={computerLeaderboard(currentLeaderboard)} />
     </>
   );
 }

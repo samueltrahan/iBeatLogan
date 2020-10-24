@@ -12,12 +12,6 @@
   width: 350px;
 }
 
-.checkbox {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-}
-
 .add-game-form {
   display: grid;
   grid-template-rows: repeat(4, 80px);

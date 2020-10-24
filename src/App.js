@@ -3,7 +3,6 @@ import { ReactQueryDevtools } from 'react-query-devtools';
 import AddGame from './components/AddGame/AddGame';
 import LeaderBoards from './components/LeaderBoards/LeaderBoards';
 import NavBar from './components/NavBar/NavBar';
-import './App.css';
 
 export default function App() {
   return (
