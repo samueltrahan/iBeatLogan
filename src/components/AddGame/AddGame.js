@@ -65,7 +65,7 @@ export default function AddGame() {
         <div className="submit-button">
           <button
             disabled={disabled}
-            className="primary ui button"
+            className="secondary ui button"
             type="submit"
             onClick={handleFormSubmit}
           >

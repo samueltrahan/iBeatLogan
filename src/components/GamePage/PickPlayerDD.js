@@ -1,5 +1,3 @@
-import './PickPlayerDD.css';
-
 export default function PickPlayerDD({ setPlayer }) {
   return (
     <>

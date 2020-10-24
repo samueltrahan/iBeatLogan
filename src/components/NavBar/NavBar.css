@@ -10,26 +10,16 @@
   color: white;
   display: flex;
   align-items: center;
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
 }
 
 img {
-  width: 40px;
+  width: 45px;
   padding-right: 10px;
 }
 
 .nav-logo {
   display: flex;
   justify-content: center;
-}
-
-.nav-elements {
-  display: flex;
-  justify-content: flex-start;
-  align-self: center;
-}
-
-li {
-  list-style: none;
 }

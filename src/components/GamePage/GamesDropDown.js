@@ -1,5 +1,3 @@
-import './GamesDropDown.css';
-
 export default function GamesDropDown({ setGame }) {
   return (
     <div className="dropdown-head">
