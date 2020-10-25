@@ -8,6 +8,7 @@ const {
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 const twilioPhoneNumber = process.env.TWILIO_PHONE_NUMBER;
+const logansNumber = process.env.LOGANS_PHONE_NUMBER;
 
 const twilio = new TwilioSdk(accountSid, authToken);
 
@@ -24,8 +25,7 @@ exports.handler = async (event, context, callback) => {
   const { gameType, name } = JSON.parse(event.body);
 
   const sms = {
-    // to: process.env.LOGANS_PHONE_NUMBER,
-    to: +13372771134,
+    to: logansNumber,
     body: constructMessage(name, gameType),
     from: twilioPhoneNumber,
   };
