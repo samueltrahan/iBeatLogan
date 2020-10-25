@@ -62,7 +62,7 @@ export default function LeaderBoard() {
             type="button"
             className="secondary ui button"
             onClick={() => {
-              history.push('/add-game');
+              history.push('/add-result');
             }}
           >
             Add Result

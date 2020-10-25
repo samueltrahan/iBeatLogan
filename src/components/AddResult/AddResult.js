@@ -5,7 +5,7 @@ import axios from 'axios';
 import GamesDropDown from '../GamePage/GamesDropDown';
 import DidYouWin from '../GamePage/DidYouWin';
 import PickPlayerDD from '../GamePage/PickPlayerDD';
-import './AddGame.css';
+import './AddResult.css';
 
 const isANumber = value => !Number.isNaN(Number(value));
 
@@ -57,8 +57,19 @@ export default function AddGame() {
 
   return (
     <>
-      <h1 className="heading">Add a Game</h1>
-      <form className="add-game-form">
+      <div className="result-header">
+        <button
+          className="secondary ui button"
+          onClick={() => {
+            history.push('/');
+          }}
+          type="button"
+        >
+          Back
+        </button>
+        <h1 className="heading">Add Result</h1>
+      </div>
+      <form className="add-result-form">
         <PickPlayerDD setPlayer={setPlayer} />
         <GamesDropDown setGame={setGame} />
         <DidYouWin setWins={setWins} wins={wins} />
