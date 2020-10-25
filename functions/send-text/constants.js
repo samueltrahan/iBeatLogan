@@ -11,6 +11,7 @@ const NAMES_DISPLAY_NAME = {
   logan: 'Logan',
   sam: 'SammyT',
   terrence: 'Tmou',
+  chris: 'Chris',
 };
 
 module.exports = { GAME_TYPE_DISPLAY_NAME, NAMES_DISPLAY_NAME };

@@ -5,6 +5,7 @@ const NAMES_DISPLAY_NAME = {
   logan: 'Logan',
   sam: 'SammyT',
   terrence: 'Tmou',
+  chris: 'Chris',
 };
 
 const HORSE = { game: 'horse', displayName: 'Horse' };
