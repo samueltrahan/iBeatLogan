@@ -1,8 +1,16 @@
 const faunadb = require('faunadb');
 require('dotenv').config();
 
+const getServerSecret = () => {
+  if (process.env.NETLIFY_DEV) {
+    return process.env.FAUNADB_SERVER_SECRET_QA;
+  }
+
+  return process.env.FAUNADB_SERVER_SECRET_QA;
+};
+
 const faunaClient = new faunadb.Client({
-  secret: process.env.FAUNADB_SERVER_SECRET,
+  secret: getServerSecret(),
 });
 
 const q = faunadb.query;
