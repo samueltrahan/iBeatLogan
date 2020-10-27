@@ -2,7 +2,7 @@ const faunadb = require('faunadb');
 require('dotenv').config();
 
 const getServerSecret = () => {
-  if (process.env.NETLIFY_DEV) {
+  if (process.env.NETLIFY_DEV === 'true') {
     return process.env.FAUNADB_SERVER_SECRET_QA;
   }
 
