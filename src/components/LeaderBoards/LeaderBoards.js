@@ -6,7 +6,8 @@ import { Leaderboard } from './Leaderboard';
 import './LeaderBoards.css';
 import { LeaderBoardRadios } from './LeaderBoardRadios';
 
-const sortWins = game => game.sort((a, b) => b.wins - a.wins);
+const sortWins = game =>
+  game.filter(player => player.wins).sort((a, b) => b.wins - a.wins);
 
 export default function LeaderBoard() {
   const history = useHistory();
@@ -72,11 +73,6 @@ export default function LeaderBoard() {
           currentLeaderboard={currentLeaderboard}
           setCurrentLeaderboard={setCurrentLeaderboard}
         />
-      </div>
-
-      <div className="leaderboard-header">
-        <span>Player</span>
-        <span>Wins</span>
       </div>
       <Leaderboard players={computerLeaderboard(currentLeaderboard)} />
     </>

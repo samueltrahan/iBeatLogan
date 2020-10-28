@@ -65,3 +65,20 @@
 .leaderboard-wins {
   text-align: right;
 }
+.empty-leaderboard {
+  margin-top: 50px;
+  display: grid;
+  justify-content: center;
+  text-align: center;
+}
+
+.empty-icon {
+  font-size: 60px;
+  padding-bottom: 10px;
+}
+
+.empty-text {
+  display: grid;
+  row-gap: 10px;
+  font-size: 16px;
+}
