@@ -6,7 +6,7 @@ const getServerSecret = () => {
     return process.env.FAUNADB_SERVER_SECRET_QA;
   }
 
-  return process.env.FAUNADB_SERVER_SECRET_QA;
+  return process.env.FAUNADB_SERVER_SECRET;
 };
 
 const faunaClient = new faunadb.Client({
