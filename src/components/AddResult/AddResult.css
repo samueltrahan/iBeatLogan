@@ -2,19 +2,15 @@
   text-align: center;
 }
 
-.dropdown-head {
-  display: flex;
-  justify-content: center;
-  align-self: center;
-}
-
 .dropdown {
-  width: 350px;
+  width: 250px;
 }
 
 .add-result-form {
+  margin-top: 50px;
   display: grid;
-  grid-template-rows: repeat(4, 80px);
+  grid-template-rows: repeat(4, 75px);
+  row-gap: 20px;
 }
 
 .submit-button {
@@ -24,7 +20,7 @@
 }
 
 .submit-button > button {
-  width: 350px;
+  width: 250px;
 }
 
 .result-header {
@@ -34,10 +30,10 @@
   align-items: center;
 }
 
-.result-header > button.secondary.ui.button {
+.result-header > button.ui {
   grid-row: 1;
   grid-column: 1/2;
-  height: 40px;
+  height: 36px;
   width: 100px;
   margin-left: 15px;
 }
@@ -49,9 +45,17 @@
 }
 
 @media only screen and (max-width: 500px) {
-  .result-header > button.secondary.ui.button {
+  .add-result-form {
+    margin-top: 30px;
+  }
+
+  .result-header > button.ui {
     width: 80px;
     margin-left: 5px;
-    height: 35px;
+    height: 44px;
+  }
+
+  .submit-button > button {
+    height: 44px;
   }
 }

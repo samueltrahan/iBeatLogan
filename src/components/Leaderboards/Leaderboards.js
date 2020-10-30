@@ -2,14 +2,16 @@ import { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
+import { Button } from 'semantic-ui-react';
 import { Leaderboard } from './Leaderboard';
-import './LeaderBoards.css';
-import { LeaderBoardRadios } from './LeaderBoardRadios';
+import { LeaderboardRadios } from './LeaderboardRadios';
+import { Loading } from '../Loading';
+import './Leaderboards.css';
 
 const sortWins = game =>
   game.filter(player => player.wins).sort((a, b) => b.wins - a.wins);
 
-export default function LeaderBoard() {
+export default function Leaderboards() {
   const history = useHistory();
 
   const [horse, setHorse] = useState([]);
@@ -31,11 +33,7 @@ export default function LeaderBoard() {
   }, [data]);
 
   if (isLoading) {
-    return (
-      <div className="ui active inverted dimmer">
-        <div className="ui text loader">Loading</div>
-      </div>
-    );
+    return <Loading />;
   }
 
   if (error) {
@@ -59,17 +57,17 @@ export default function LeaderBoard() {
       <h1 className="leaderboards-header">Leaderboards</h1>
       <div className="button-controls">
         <div className="add-game-button">
-          <button
+          <Button
+            secondary
             type="button"
-            className="secondary ui button"
             onClick={() => {
               history.push('/add-result');
             }}
           >
             Add Result
-          </button>
+          </Button>
         </div>
-        <LeaderBoardRadios
+        <LeaderboardRadios
           currentLeaderboard={currentLeaderboard}
           setCurrentLeaderboard={setCurrentLeaderboard}
         />

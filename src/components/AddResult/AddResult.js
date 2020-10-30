@@ -2,9 +2,11 @@ import { useEffect, useState } from 'react';
 import { useMutation } from 'react-query';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-import GamesDropDown from '../GamePage/GamesDropDown';
-import DidYouWin from '../GamePage/DidYouWin';
-import PickPlayerDD from '../GamePage/PickPlayerDD';
+import { Button } from 'semantic-ui-react';
+import { GameSelect } from './GameSelect';
+import { Loading } from '../Loading';
+import { PlayerSelect } from './PlayerSelect';
+import { WinsInput } from './WinsInput';
 import './AddResult.css';
 
 const isANumber = value => !Number.isNaN(Number(value));
@@ -13,7 +15,7 @@ export default function AddGame() {
   const history = useHistory();
   const [player, setPlayer] = useState('');
   const [game, setGame] = useState('');
-  const [wins, setWins] = useState('');
+  const [wins, setWins] = useState('1');
   const [disabled, setDisabled] = useState(true);
 
   const [addResult, { isLoading }] = useMutation(
@@ -48,40 +50,36 @@ export default function AddGame() {
   }, [game, player, wins]);
 
   if (isLoading) {
-    return (
-      <div className="ui active inverted dimmer">
-        <div className="ui text loader">Loading</div>
-      </div>
-    );
+    return <Loading />;
   }
 
   return (
     <>
       <div className="result-header">
-        <button
-          className="secondary ui button"
+        <Button
           onClick={() => {
             history.push('/');
           }}
+          secondary
           type="button"
         >
           Back
-        </button>
+        </Button>
         <h1 className="heading">Add Result</h1>
       </div>
       <form className="add-result-form">
-        <PickPlayerDD setPlayer={setPlayer} />
-        <GamesDropDown setGame={setGame} />
-        <DidYouWin setWins={setWins} wins={wins} />
+        <PlayerSelect setPlayer={setPlayer} />
+        <GameSelect setGame={setGame} />
+        <WinsInput setWins={setWins} wins={wins} />
         <div className="submit-button">
-          <button
+          <Button
             disabled={disabled}
-            className="secondary ui button"
-            type="submit"
             onClick={handleFormSubmit}
+            secondary
+            type="submit"
           >
             Submit
-          </button>
+          </Button>
         </div>
       </form>
     </>
