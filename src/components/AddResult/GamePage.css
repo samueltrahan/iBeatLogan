@@ -1,0 +1,15 @@
+.player-dropdown,
+.game-dropdown,
+.wins {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wins-input {
+  width: 250px;
+}
+
+.label {
+  padding-bottom: 10px;
+}

@@ -15,7 +15,7 @@
   padding-bottom: 10px;
 }
 
-.add-game-button > button.ui.secondary.button {
+.add-game-button > button {
   width: 100%;
   font-size: 16px;
   margin: 0;
@@ -40,13 +40,13 @@
   font-size: 20px;
 }
 
-.ui.secondary.button.leaderboard-radio-button.active {
+.leaderboard-radios button.ui.leaderboard-radio-button.active {
   background-color: #ffffff;
   color: #1b1c1d;
   border: #1b1c1d solid 2px;
 }
 
-.ui.secondary.button.leaderboard-radio-button {
+.leaderboard-radios button.leaderboard-radio-button {
   margin: 0;
   height: 40px;
   font-size: 16px;
@@ -81,4 +81,14 @@
   display: grid;
   row-gap: 10px;
   font-size: 16px;
+}
+
+@media only screen and (max-width: 500px) {
+  .leaderboard-radios button.leaderboard-radio-button {
+    height: 44px;
+  }
+
+  .add-game-button > button {
+    height: 44px;
+  }
 }

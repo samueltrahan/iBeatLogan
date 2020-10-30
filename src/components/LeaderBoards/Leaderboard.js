@@ -22,5 +22,6 @@ export const Leaderboard = ({ players }) => {
       </>
     );
   }
+
   return <EmptyLeaderboard />;
 };
